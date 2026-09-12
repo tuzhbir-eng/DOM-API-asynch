@@ -1,0 +1,22 @@
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.button {
+  font-size: 100px;
+  background-color: rgb(24, 145, 216);
+box-shadow:  5px 5px 10px rgb(96, 190, 253);
+border-radius: 40px;
+border: solid 3px rgb(27, 100, 168);
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: rgb(26, 121, 177);
+box-shadow:  5px 5px 10px rgb(26, 121, 177);
+
+}
