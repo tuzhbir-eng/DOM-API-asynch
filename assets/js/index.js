@@ -21,14 +21,34 @@
 //////////////////////////////////////////////////////////////////////////////////////
 
 //З ВИКОРИСТАННЯМ SETTIMEOUT//
-const button = document.querySelector("#button");
-button.addEventListener("click", (e) => {
-  function printNumbers(from, to) {
-    console.log(from);
-    if (from >= to) return;
+// const button = document.querySelector("#button");
+// button.addEventListener("click", (e) => {
+//   function printNumbers(from, to) {
+//     console.log(from);
+//     if (from >= to) {
+//       return;
+//     }
 
-    setTimeout((e) => printNumbers(from + 1, to), 1000);
-  }
+//     setTimeout((e) => printNumbers(from++, to), 1000);
+//   }
 
-  printNumbers(0, 5);
-});
+//   printNumbers(0, 5);
+// });
+
+//2-FETCH//
+const factBtn = document.querySelector("#btn");
+const factText = document.querySelector("#fact");
+const facts = "https://catfact.ninja/fact";
+
+function getFact() {
+  fetch(facts)
+    .then((response) => response.json())
+    .then((data) => generateFact(data));
+}
+
+function generateFact(data) {
+  return (factText.textContent = `${data.fact}`);
+}
+
+factBtn.addEventListener("click", getFact);
+
