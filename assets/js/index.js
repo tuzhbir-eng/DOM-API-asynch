@@ -1,39 +1,39 @@
 //З ВИКОРИСТАННЯМ SETINTERVAL//
-const button = document.querySelector("#button");
-button.addEventListener("click", (e) => {
-  //   let from = 0;
-  //   let to = 5;
-  // let interval = 2000;
-  function printNumbers(from, to) {
-    let current = from;
-    const timerId = setInterval(() => {
-      if (current > to) {
-        clearInterval(timerId);
-        return;
-      }
-      console.log(current);
-      current++;
-    }, 1000);
-  }
-  console.log(printNumbers(0, 5));
-});
+// const button = document.querySelector("#button");
+// button.addEventListener("click", (e) => {
+//   //   let from = 0;
+//   //   let to = 5;
+//   // let interval = 2000;
+//   function printNumbers(from, to) {
+//     let current = from;
+//     const timerId = setInterval(() => {
+//       if (current > to) {
+//         clearInterval(timerId);
+//         return;
+//       }
+//       console.log(current);
+//       current++;
+//     }, 1000);
+//   }
+//   console.log(printNumbers(0, 5));
+// });
 
 //////////////////////////////////////////////////////////////////////////////////////
 
 // З ВИКОРИСТАННЯМ SETTIMEOUT//
-// const button = document.querySelector("#button");
-// button.addEventListener("click", (e) => {
-//   function printNumbers(from, to) {
-//     console.log(from);
-//     if (from >= to) {
-//       return;
-//     }
+const button = document.querySelector("#button");
+button.addEventListener("click", (e) => {
+  function printNumbers(from, to) {
+    console.log(from);
+    if (from >= to) {
+      return;
+    }
 
-//     setTimeout((e) => printNumbers(from++, to), 1000);
-//   }
+    setTimeout((e) => printNumbers(++from, to), 1000);
+  }
 
-//   printNumbers(0, 5);
-// });
+  printNumbers(0, 5);
+});
 
 // //2-FETCH//
 // const factBtn = document.querySelector("#btn");
