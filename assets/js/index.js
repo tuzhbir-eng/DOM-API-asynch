@@ -1,26 +1,26 @@
 //З ВИКОРИСТАННЯМ SETINTERVAL//
-// const button = document.querySelector("#button");
-// button.addEventListener("click", (e) => {
-//   //   let from = 0;
-//   //   let to = 5;
-//   // let interval = 2000;
-//   function printNumbers(from, to) {
-//     function print() {
-//       while (from <= to) {
-//         console.log(from);
-//         from++;
-//         return;
-//       }
-//     }
-//     setInterval(print, 1000);
-//   }
-
-//   console.log(printNumbers(0, 5));
-// });
+const button = document.querySelector("#button");
+button.addEventListener("click", (e) => {
+  //   let from = 0;
+  //   let to = 5;
+  // let interval = 2000;
+  function printNumbers(from, to) {
+    let current = from;
+    const timerId = setInterval(() => {
+      if (current > to) {
+        clearInterval(timerId);
+        return;
+      }
+      console.log(current);
+      current++;
+    }, 1000);
+  }
+  console.log(printNumbers(0, 5));
+});
 
 //////////////////////////////////////////////////////////////////////////////////////
 
-//З ВИКОРИСТАННЯМ SETTIMEOUT//
+// З ВИКОРИСТАННЯМ SETTIMEOUT//
 // const button = document.querySelector("#button");
 // button.addEventListener("click", (e) => {
 //   function printNumbers(from, to) {
@@ -35,20 +35,19 @@
 //   printNumbers(0, 5);
 // });
 
-//2-FETCH//
-const factBtn = document.querySelector("#btn");
-const factText = document.querySelector("#fact");
-const facts = "https://catfact.ninja/fact";
+// //2-FETCH//
+// const factBtn = document.querySelector("#btn");
+// const factText = document.querySelector("#fact");
+// const facts = "https://catfact.ninja/fact";
 
-function getFact() {
-  fetch(facts)
-    .then((response) => response.json())
-    .then((data) => generateFact(data));
-}
+// function getFact() {
+//   fetch(facts)
+//     .then((response) => response.json())
+//     .then((data) => generateFact(data));
+// }
 
-function generateFact(data) {
-  return (factText.textContent = `${data.fact}`);
-}
+// function generateFact(data) {
+//   return (factText.textContent = `${data.fact}`);
+// }
 
-factBtn.addEventListener("click", getFact);
-
+// factBtn.addEventListener("click", getFact);
